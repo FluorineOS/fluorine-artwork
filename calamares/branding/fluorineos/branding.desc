@@ -1,0 +1,31 @@
+---
+# Calamares branding descriptor for FluorineOS
+# componentName must match the directory name under /usr/share/calamares/branding/
+componentName:        fluorineos
+
+strings:
+  productName:        FluorineOS
+  shortProductName:   FluorineOS
+  version:            0.0.1
+  shortVersion:       0.0.1
+  versionedName:      FluorineOS 0.0.1
+  shortVersionedName: FluorineOS 0.0.1
+  bootloaderEntryName: FluorineOS
+  productUrl:         https://github.com/FluorineOS
+  supportUrl:         https://github.com/FluorineOS
+  knownIssuesUrl:     https://github.com/FluorineOS/fluorine/issues
+  releaseNotesUrl:    https://github.com/FluorineOS/fluorine/releases/tag/v0.0.1
+
+images:
+  productLogo:        logo.svg
+  productIcon:        icon.svg
+  productWelcome:     logo.svg
+
+slideshow:            show.qml
+slideshowAPI:         2
+
+style:
+  sidebarBackground:  "#000000"
+  sidebarText:        "#E2E8F0"
+  sidebarTextSelect:  "#B4F03A"
+  sidebarTextHighlight: "#2A3812"

@@ -1,0 +1,7 @@
+fluorine-artwork (0.0.1) trixie; urgency=medium
+
+  * Initial release. Ships AMOLED wallpapers, Plymouth boot splash,
+    fastfetch ASCII logo and configuration, and Calamares branding
+    assets for FluorineOS 0.0.1.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Sun, 22 Nov 2026 11:21:00 +0530

@@ -1,0 +1,11 @@
+backgrounds/fluorine-void.svg usr/share/backgrounds/fluorineos/
+backgrounds/fluorine-grid.svg usr/share/backgrounds/fluorineos/
+skel/.config/fastfetch/logo.txt etc/skel/.config/fastfetch/
+skel/.config/fastfetch/config.jsonc etc/skel/.config/fastfetch/
+plymouth/fluorineos/fluorineos.plymouth usr/share/plymouth/themes/fluorineos/
+plymouth/fluorineos/fluorineos.script usr/share/plymouth/themes/fluorineos/
+calamares/branding/fluorineos/branding.desc usr/share/calamares/branding/fluorineos/
+calamares/branding/fluorineos/logo.svg usr/share/calamares/branding/fluorineos/
+calamares/branding/fluorineos/icon.svg usr/share/calamares/branding/fluorineos/
+calamares/branding/fluorineos/show.qml usr/share/calamares/branding/fluorineos/
+calamares/branding/fluorineos/stylesheet.qss usr/share/calamares/branding/fluorineos/

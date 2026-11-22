@@ -1,0 +1,18 @@
+Source: fluorine-artwork
+Section: misc
+Priority: optional
+Maintainer: gowthvm <gowthamgkofficial@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: fluorine-artwork
+Architecture: all
+Depends: ${misc:Depends}
+Description: FluorineOS artwork, wallpapers, Plymouth theme, and Calamares branding
+ This package installs the visual assets for FluorineOS 0.0.1, including:
+ .
+ - AMOLED 3840x2160 SVG wallpapers for the OLED Void design language
+ - Plymouth boot splash theme using the script plugin
+ - fastfetch ASCII logo and JSONC configuration
+ - Calamares installer branding, QML slideshow, and stylesheet

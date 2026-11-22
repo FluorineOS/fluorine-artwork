@@ -1,0 +1,147 @@
+//
+// fluorineos.script -- Plymouth boot theme for FluorineOS 0.0.1
+// Plugin: script
+// Design: AMOLED Void -- pure black background, #1C2229 track, #B4F03A progress bar
+// Plain ASCII only. No emojis.
+//
+
+// ---- Palette ----------------------------------------------------------------
+// Void canvas
+Window.SetBackgroundTopColor    (0.00, 0.00, 0.00);
+Window.SetBackgroundBottomColor (0.00, 0.00, 0.00);
+
+// ---- Geometry ---------------------------------------------------------------
+screen_width  = Window.GetWidth  ();
+screen_height = Window.GetHeight ();
+cx            = screen_width  / 2;
+cy            = screen_height / 2;
+
+// Progress bar dimensions
+bar_w         = 320;
+bar_h         = 2;
+bar_x         = cx - bar_w / 2;
+bar_y         = cy + 100;
+
+// ---- Geometric emblem -------------------------------------------------------
+// Minimal octahedron-inspired diamond: four lines forming a diamond outline
+// drawn as a Plymouth Image is not easily available; use the Sprite + Image API.
+// We draw a diamond using four thin rectangles arranged as a rotated square.
+
+fun DrawDiamond(cx, cy, r, sprite_list) {
+    // Top arm
+    top    = Image.NewGradient ("linear", 0, 0, 1, 0, 0.11, 0.13, 0.16, 1.0,
+                                                     0.11, 0.13, 0.16, 1.0);
+    // Use solid rectangles for each segment
+    // Plymouth script has limited drawing primitives; build from Image rectangles.
+    return sprite_list;
+}
+
+// Emblem: a simple crosshair diamond using thin sprite rectangles
+// Horizontal bar of diamond
+emblem_h_img = Image.NewSolidColor (bar_w / 4, 1, 0.11, 0.13, 0.16, 1.0);
+emblem_h     = Sprite  ();
+emblem_h.SetImage  (emblem_h_img);
+emblem_h.SetX      (cx - bar_w / 8);
+emblem_h.SetY      (cy - 1);
+emblem_h.SetZ      (1);
+
+// Vertical bar of diamond
+emblem_v_img = Image.NewSolidColor (1, bar_w / 4, 0.11, 0.13, 0.16, 1.0);
+emblem_v     = Sprite  ();
+emblem_v.SetImage  (emblem_v_img);
+emblem_v.SetX      (cx - 1);
+emblem_v.SetY      (cy - bar_w / 8);
+emblem_v.SetZ      (1);
+
+// Lime accent dot at center
+dot_img = Image.NewSolidColor (4, 4, 0.706, 0.941, 0.227, 1.0);
+dot     = Sprite  ();
+dot.SetImage (dot_img);
+dot.SetX     (cx - 2);
+dot.SetY     (cy - 2);
+dot.SetZ     (2);
+
+// ---- Progress track ---------------------------------------------------------
+// Track background: #1C2229 (r=0.110, g=0.133, b=0.161)
+track_img = Image.NewSolidColor (bar_w, bar_h, 0.110, 0.133, 0.161, 1.0);
+track     = Sprite  ();
+track.SetImage (track_img);
+track.SetX     (bar_x);
+track.SetY     (bar_y);
+track.SetZ     (1);
+
+// ---- Progress fill ----------------------------------------------------------
+// Reactive lime: #B4F03A (r=0.706, g=0.941, b=0.227)
+progress_width = 0;
+
+progress_img = Image.NewSolidColor (1, bar_h, 0.706, 0.941, 0.227, 1.0);
+progress     = Sprite  ();
+progress.SetImage (progress_img);
+progress.SetX     (bar_x);
+progress.SetY     (bar_y);
+progress.SetZ     (2);
+
+// ---- Boot progress callback -------------------------------------------------
+fun boot_progress_callback (duration, progress) {
+    new_width = Math.Int (bar_w * progress);
+    if (new_width < 1) { new_width = 1; }
+    if (new_width != progress_width) {
+        progress_width = new_width;
+        progress_img   = Image.NewSolidColor (progress_width, bar_h,
+                                              0.706, 0.941, 0.227, 1.0);
+        progress.SetImage (progress_img);
+    }
+}
+
+Plymouth.SetBootProgressFunction (boot_progress_callback);
+
+// ---- LUKS passphrase dialog -------------------------------------------------
+// Displays a minimal text entry indicator below the progress bar.
+
+dialog_sprite   = NULL;
+dialog_bullet   = NULL;
+bullet_count    = 0;
+dialog_active   = 0;
+
+fun display_password_callback (prompt, bullets) {
+    dialog_active = 1;
+    bullet_count  = bullets;
+
+    // Label: "Passphrase:" in muted text (#6E7681)
+    if (dialog_sprite == NULL) {
+        label_img    = Image.NewSolidColor (1, 1, 0.431, 0.463, 0.506, 0.0);
+        dialog_sprite = Sprite ();
+        dialog_sprite.SetZ (3);
+    }
+
+    // Draw bullet dots: one 4x4 lime dot per entered character
+    // Clear old bullets
+    if (dialog_bullet != NULL) {
+        dialog_bullet.SetOpacity (0);
+    }
+
+    if (bullets > 0) {
+        bullet_total_w = bullets * 10;
+        bullet_img     = Image.NewSolidColor (bullet_total_w, 4,
+                                              0.706, 0.941, 0.227, 1.0);
+        dialog_bullet  = Sprite ();
+        dialog_bullet.SetImage   (bullet_img);
+        dialog_bullet.SetX       (cx - bullet_total_w / 2);
+        dialog_bullet.SetY       (bar_y + 20);
+        dialog_bullet.SetZ       (3);
+        dialog_bullet.SetOpacity (1);
+    }
+}
+
+Plymouth.SetDisplayPasswordFunction (display_password_callback);
+
+// ---- Quit -------------------------------------------------------------------
+fun quit_callback () {
+    dot.SetOpacity      (0);
+    track.SetOpacity    (0);
+    progress.SetOpacity (0);
+    emblem_h.SetOpacity (0);
+    emblem_v.SetOpacity (0);
+}
+
+Plymouth.SetQuitFunction (quit_callback);

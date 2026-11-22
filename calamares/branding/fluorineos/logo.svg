@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128" height="128"
+     viewBox="0 0 128 128">
+
+  <!-- Background: void canvas -->
+  <rect width="128" height="128" fill="#000000"/>
+
+  <!-- Fluorite octahedron diamond outline -->
+  <!-- Diamond vertices: top, bottom, left, right -->
+  <!-- Center: (64, 64), radius: 48 -->
+  <g stroke="#1C2229" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer diamond -->
+    <polygon points="64,16 112,64 64,112 16,64"/>
+    <!-- Inner diamond at 50% scale -->
+    <polygon points="64,40 88,64 64,88 40,64"/>
+    <!-- Vertical axis -->
+    <line x1="64" y1="16" x2="64" y2="112"/>
+    <!-- Horizontal axis -->
+    <line x1="16" y1="64" x2="112" y2="64"/>
+  </g>
+
+  <!-- Reactive lime accent: top vertex and right vertex highlighted -->
+  <g stroke="#B4F03A" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <line x1="64" y1="16" x2="112" y2="64"/>
+  </g>
+
+  <!-- Center point: reactive lime -->
+  <circle cx="64" cy="64" r="2" fill="#B4F03A"/>
+
+</svg>

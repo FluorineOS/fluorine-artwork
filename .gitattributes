@@ -1,0 +1,15 @@
+# Enforce LF line endings for all text files in this repository.
+* text=auto eol=lf
+*.svg text eol=lf
+*.qml text eol=lf
+*.qss text eol=lf
+*.desc text eol=lf
+*.jsonc text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.script text eol=lf
+*.plymouth text eol=lf
+debian/changelog text eol=lf
+debian/control text eol=lf
+debian/install text eol=lf
+debian/rules text eol=lf

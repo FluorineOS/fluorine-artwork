@@ -1,0 +1,70 @@
+// fastfetch configuration for FluorineOS 0.0.1
+// Keys: #B4F03A (reactive lime), Values: #E2E8F0 (primary text)
+// Plain ASCII only. No emojis.
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/logo.txt",
+    "type": "file",
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    },
+    "color": {
+      "1": "38;2;180;240;58"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "38;2;180;240;58",
+      "output": "38;2;226;232;240"
+    }
+  },
+  "modules": [
+    {
+      "type": "os",
+      "key": "OS",
+      "keyColor": "38;2;180;240;58",
+      "format": "FluorineOS 0.0.1"
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel",
+      "keyColor": "38;2;180;240;58"
+    },
+    {
+      "type": "wm",
+      "key": "WM",
+      "keyColor": "38;2;180;240;58",
+      "format": "Hyprland"
+    },
+    {
+      "type": "shell",
+      "key": "Shell",
+      "keyColor": "38;2;180;240;58"
+    },
+    {
+      "type": "terminal",
+      "key": "Terminal",
+      "keyColor": "38;2;180;240;58",
+      "format": "kitty"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU",
+      "keyColor": "38;2;180;240;58"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "38;2;180;240;58"
+    },
+    {
+      "type": "memory",
+      "key": "Memory",
+      "keyColor": "38;2;180;240;58"
+    }
+  ]
+}

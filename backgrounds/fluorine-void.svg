@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="3840" height="2160"
+     viewBox="0 0 3840 2160">
+
+  <!-- Void canvas: pure AMOLED black -->
+  <rect width="3840" height="2160" fill="#000000"/>
+
+  <!--
+    Fluorite octahedron wireframe, centered at (1920, 1080).
+    An octahedron has 6 vertices and 12 edges.
+    Projected isometrically onto a 2D plane.
+    All strokes in inactive-border #1C2229 at 1px.
+    Accent line in reactive-lime #B4F03A at 1px.
+  -->
+
+  <!-- Octahedron geometry:
+       Top:    (1920, 780)
+       Bottom: (1920, 1380)
+       Left:   (1620, 1080)
+       Right:  (2220, 1080)
+       Front:  (1920, 1180)   -- shifted down in projection
+       Back:   (1920, 980)    -- shifted up in projection
+
+       Redefine with proper isometric-style projection:
+       Center: (1920, 1080), radius R=300
+
+       6 vertices of a regular octahedron projected as:
+         Top    = (1920, 780)
+         Bottom = (1920, 1380)
+         Left   = (1620, 1080)
+         Right  = (2220, 1080)
+         Near   = (2070, 1230)   (+R*cos45, +R*sin45) offset
+         Far    = (1770, 930)    (-R*cos45, -R*sin45) offset
+  -->
+
+  <g id="octahedron-wireframe" stroke="#1C2229" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top vertex (T)   = (1920, 780)  -->
+    <!-- Bottom vertex (B)= (1920, 1380) -->
+    <!-- Left vertex (L)  = (1620, 1080) -->
+    <!-- Right vertex (R) = (2220, 1080) -->
+    <!-- Near vertex (N)  = (2070, 1230) -->
+    <!-- Far vertex (F)   = (1770, 930)  -->
+
+    <!-- 12 edges of the octahedron -->
+    <!-- Top to equatorial ring -->
+    <line x1="1920" y1="780"  x2="1620" y2="1080"/>
+    <line x1="1920" y1="780"  x2="2220" y2="1080"/>
+    <line x1="1920" y1="780"  x2="2070" y2="1230"/>
+    <line x1="1920" y1="780"  x2="1770" y2="930"/>
+
+    <!-- Bottom to equatorial ring -->
+    <line x1="1920" y1="1380" x2="1620" y2="1080"/>
+    <line x1="1920" y1="1380" x2="2220" y2="1080"/>
+    <line x1="1920" y1="1380" x2="2070" y2="1230"/>
+    <line x1="1920" y1="1380" x2="1770" y2="930"/>
+
+    <!-- Equatorial ring -->
+    <line x1="1620" y1="1080" x2="1770" y2="930"/>
+    <line x1="1770" y1="930"  x2="2220" y2="1080"/>
+    <line x1="2220" y1="1080" x2="2070" y2="1230"/>
+    <line x1="2070" y1="1230" x2="1620" y2="1080"/>
+  </g>
+
+  <!-- Reactive lime accent: single precision line across the equatorial axis -->
+  <line x1="1620" y1="1080" x2="2220" y2="1080"
+        stroke="#B4F03A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Subtle lattice extension lines radiating from each vertex (inactive border) -->
+  <g id="lattice" stroke="#1C2229" stroke-width="0.5" fill="none" opacity="0.6">
+    <!-- Extension from Top -->
+    <line x1="1920" y1="780"  x2="1920" y2="400"/>
+    <!-- Extension from Bottom -->
+    <line x1="1920" y1="1380" x2="1920" y2="1760"/>
+    <!-- Extension from Left -->
+    <line x1="1620" y1="1080" x2="1240" y2="1080"/>
+    <!-- Extension from Right -->
+    <line x1="2220" y1="1080" x2="2600" y2="1080"/>
+    <!-- Extension from Near -->
+    <line x1="2070" y1="1230" x2="2320" y2="1480"/>
+    <!-- Extension from Far -->
+    <line x1="1770" y1="930"  x2="1520" y2="680"/>
+  </g>
+
+</svg>
