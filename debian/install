@@ -10,6 +10,7 @@ skel/.config/qt5ct/qt5ct.conf etc/skel/.config/qt5ct/
 skel/.config/qt6ct/qt6ct.conf etc/skel/.config/qt6ct/
 qt/colors/fluorine.conf usr/share/fluorineos/qt/colors/
 dconf/profile/user etc/dconf/profile/
+fonts/50-fluorineos-alias.conf etc/fonts/conf.d/
 dconf/local.d/00-fluorine-appearance etc/dconf/db/local.d/
 plymouth/fluorineos/fluorineos.plymouth usr/share/plymouth/themes/fluorineos/
 plymouth/fluorineos/fluorineos.script usr/share/plymouth/themes/fluorineos/

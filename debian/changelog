@@ -1,3 +1,13 @@
+fluorine-artwork (0.1.1) trixie; urgency=medium
+
+  * Depend on fonts-inter, fonts-jetbrains-mono, gsettings-desktop-schemas,
+    and dconf-cli so the shipped font, schema, and dconf defaults are active.
+  * Add a fontconfig alias that resolves the Space Grotesk UI family to the
+    packaged Inter family, since Space Grotesk is absent from Debian 13.
+  * Add the missing machine-readable copyright file under the MIT License.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Mon, 23 Nov 2026 20:35:00 +0530
+
 fluorine-artwork (0.1.0) trixie; urgency=medium
 
   * Add unified toolkit defaults so GTK, Qt, and Electron applications match

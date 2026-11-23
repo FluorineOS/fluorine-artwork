@@ -25,6 +25,7 @@ and dark GTK, Qt, and gsettings defaults.
 | `/etc/skel/.config/qt6ct/qt6ct.conf` | Qt 6 Fusion style bound to the FluorineOS palette |
 | `/etc/skel/.config/qt5ct/qt5ct.conf` | Qt 5 Fusion style bound to the same palette |
 | `/usr/share/fluorineos/qt/colors/fluorine.conf` | Shared qt5ct and qt6ct palette |
+| `/etc/fonts/conf.d/50-fluorineos-alias.conf` | Resolves Space Grotesk to the packaged Inter family |
 | `/etc/dconf/profile/user` | dconf profile reading the local system database |
 | `/etc/dconf/db/local.d/00-fluorine-appearance` | Dark scheme, icon theme, cursor, and font keys |
 | `/usr/share/plymouth/themes/fluorineos/fluorineos.plymouth` | Plymouth theme descriptor |
@@ -38,7 +39,9 @@ and dark GTK, Qt, and gsettings defaults.
 ## Toolkit Defaults
 
 GTK 3 and GTK 4 read the `settings.ini` files above, which select Adwaita, the dark
-variant, a 24px cursor, and Space Grotesk at 11pt. The paired `gtk.css` files replace the
+variant, a 24px cursor, and Space Grotesk at 11pt. Space Grotesk is not packaged in
+Debian 13, so the fontconfig alias resolves it to Inter; JetBrains Mono is packaged and
+used directly. The paired `gtk.css` files replace the
 Adwaita accent with lime `#b4f03a`, set surfaces to `#000000` and `#0a0d10`, and use deep
 moss `#2a3812` for selection.
 
@@ -73,11 +76,13 @@ Requires `dpkg-dev` and `debhelper` on Debian 13 `amd64`.
 git clone https://github.com/FluorineOS/fluorine-artwork.git
 cd fluorine-artwork
 dpkg-buildpackage -us -uc -b
-dpkg-deb -c ../fluorine-artwork_0.1.0_all.deb
+dpkg-deb -c ../fluorine-artwork_0.1.1_all.deb
 ```
 
 The built `.deb` is placed in the parent directory.
 
 ## License
+
+Released under the MIT License. See [LICENSE](LICENSE) for the full text.
 
 Source: [FluorineOS/fluorine-artwork](https://github.com/FluorineOS/fluorine-artwork)
