@@ -2,8 +2,9 @@
 
 Debian 13 Trixie | Hyprland 0.55+ | x86_64
 
-> For the FluorineOS ISO image, see the main repository at
-> [https://github.com/FluorineOS/fluorine](https://github.com/FluorineOS/fluorine).
+> **Looking for the FluorineOS ISO?** Official installation images are published in the
+> main repository:
+> [FluorineOS/fluorine Releases](https://github.com/FluorineOS/fluorine/releases/latest).
 
 This package installs the visual assets for FluorineOS 0.0.1: AMOLED SVG wallpapers,
 Plymouth boot splash, fastfetch configuration, and Calamares installer branding.
@@ -48,4 +49,4 @@ The built `.deb` is placed in the parent directory.
 
 ## License
 
-Source: [https://github.com/FluorineOS/fluorine-artwork](https://github.com/FluorineOS/fluorine-artwork)
+Source: [FluorineOS/fluorine-artwork](https://github.com/FluorineOS/fluorine-artwork)
