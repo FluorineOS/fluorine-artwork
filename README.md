@@ -76,7 +76,7 @@ Requires `dpkg-dev` and `debhelper` on Debian 13 `amd64`.
 git clone https://github.com/FluorineOS/fluorine-artwork.git
 cd fluorine-artwork
 dpkg-buildpackage -us -uc -b
-dpkg-deb -c ../fluorine-artwork_0.1.1_all.deb
+dpkg-deb -c ../fluorine-artwork_0.1.2_all.deb
 ```
 
 The built `.deb` is placed in the parent directory.

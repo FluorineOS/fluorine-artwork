@@ -6,15 +6,15 @@ componentName:        fluorineos
 strings:
   productName:        FluorineOS
   shortProductName:   FluorineOS
-  version:            0.0.1
-  shortVersion:       0.0.1
-  versionedName:      FluorineOS 0.0.1
-  shortVersionedName: FluorineOS 0.0.1
+  version:            0.1.0
+  shortVersion:       0.1.0
+  versionedName:      FluorineOS 0.1.0
+  shortVersionedName: FluorineOS 0.1.0
   bootloaderEntryName: FluorineOS
   productUrl:         https://github.com/FluorineOS
   supportUrl:         https://github.com/FluorineOS
   knownIssuesUrl:     https://github.com/FluorineOS/fluorine/issues
-  releaseNotesUrl:    https://github.com/FluorineOS/fluorine/releases/tag/v0.0.1
+  releaseNotesUrl:    https://github.com/FluorineOS/fluorine/releases/tag/v0.1.0
 
 images:
   productLogo:        logo.svg

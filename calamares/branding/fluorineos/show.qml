@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 /*
- * show.qml -- Calamares slideshow for FluorineOS 0.0.1
+ * show.qml -- Calamares slideshow for FluorineOS 0.1.0
  * Slideshow API version 2.
  * Design: AMOLED Void -- #000000 background, #B4F03A accent, #E2E8F0 text.
  * Plain ASCII only. No emojis.
@@ -26,7 +26,7 @@ Presentation {
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: "FluorineOS 0.0.1"
+                    text: "FluorineOS 0.1.0"
                     font.family: "Inter, sans-serif"
                     font.pixelSize: 32
                     font.weight: Font.Bold
