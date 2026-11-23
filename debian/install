@@ -2,6 +2,15 @@ backgrounds/fluorine-void.svg usr/share/backgrounds/fluorineos/
 backgrounds/fluorine-grid.svg usr/share/backgrounds/fluorineos/
 skel/.config/fastfetch/logo.txt etc/skel/.config/fastfetch/
 skel/.config/fastfetch/config.jsonc etc/skel/.config/fastfetch/
+skel/.config/gtk-3.0/settings.ini etc/skel/.config/gtk-3.0/
+skel/.config/gtk-3.0/gtk.css etc/skel/.config/gtk-3.0/
+skel/.config/gtk-4.0/settings.ini etc/skel/.config/gtk-4.0/
+skel/.config/gtk-4.0/gtk.css etc/skel/.config/gtk-4.0/
+skel/.config/qt5ct/qt5ct.conf etc/skel/.config/qt5ct/
+skel/.config/qt6ct/qt6ct.conf etc/skel/.config/qt6ct/
+qt/colors/fluorine.conf usr/share/fluorineos/qt/colors/
+dconf/profile/user etc/dconf/profile/
+dconf/local.d/00-fluorine-appearance etc/dconf/db/local.d/
 plymouth/fluorineos/fluorineos.plymouth usr/share/plymouth/themes/fluorineos/
 plymouth/fluorineos/fluorineos.script usr/share/plymouth/themes/fluorineos/
 calamares/branding/fluorineos/branding.desc usr/share/calamares/branding/fluorineos/

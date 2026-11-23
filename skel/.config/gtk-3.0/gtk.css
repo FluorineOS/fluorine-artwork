@@ -1,0 +1,40 @@
+/* FluorineOS AMOLED Void palette for GTK 3 and GTK 4.
+ *
+ * Adwaita provides the widget geometry; these definitions replace its accent
+ * and surface colors so GTK applications match the rest of the desktop.
+ * Selection uses deep moss, never the lime accent.
+ */
+
+@define-color accent_color #b4f03a;
+@define-color accent_bg_color #b4f03a;
+@define-color accent_fg_color #000000;
+
+@define-color window_bg_color #000000;
+@define-color window_fg_color #e2e8f0;
+@define-color view_bg_color #000000;
+@define-color view_fg_color #e2e8f0;
+@define-color headerbar_bg_color #0a0d10;
+@define-color headerbar_fg_color #e2e8f0;
+@define-color headerbar_border_color #1c2229;
+@define-color popover_bg_color #0a0d10;
+@define-color popover_fg_color #e2e8f0;
+@define-color card_bg_color #0a0d10;
+@define-color card_fg_color #e2e8f0;
+@define-color sidebar_bg_color #0a0d10;
+@define-color sidebar_fg_color #e2e8f0;
+
+@define-color borders #1c2229;
+@define-color unfocused_borders #1c2229;
+
+@define-color theme_fg_color #e2e8f0;
+@define-color theme_text_color #e2e8f0;
+@define-color theme_bg_color #000000;
+@define-color theme_base_color #000000;
+@define-color theme_selected_bg_color #2a3812;
+@define-color theme_selected_fg_color #e2e8f0;
+@define-color insensitive_fg_color #6e7681;
+@define-color insensitive_bg_color #0a0d10;
+
+@define-color success_color #3fb950;
+@define-color warning_color #d29922;
+@define-color error_color #f85149;

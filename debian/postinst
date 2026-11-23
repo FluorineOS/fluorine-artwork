@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# Recompile the system dconf database so the FluorineOS appearance keys take
+# effect. dconf-cli is optional, so skip the update when it is not installed.
+if command -v dconf >/dev/null 2>&1; then
+    dconf update || true
+fi
+
+exit 0

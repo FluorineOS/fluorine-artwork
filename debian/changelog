@@ -1,3 +1,17 @@
+fluorine-artwork (0.1.0) trixie; urgency=medium
+
+  * Add unified toolkit defaults so GTK, Qt, and Electron applications match
+    the AMOLED Void design language on first login.
+  * Ship GTK 3 and GTK 4 settings with Adwaita dark, a 24px cursor, and
+    paired gtk.css palettes using the lime accent and deep moss selection.
+  * Ship a shared qt5ct and qt6ct palette plus Fusion style configuration,
+    installed for every new user through /etc/skel.
+  * Add a gsettings override for the prefer-dark color scheme, icon theme,
+    cursor size, and window button layout.
+  * Depend on qt6ct and recommend qt5ct and adwaita-icon-theme.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Mon, 23 Nov 2026 20:05:00 +0530
+
 fluorine-artwork (0.0.1) trixie; urgency=medium
 
   * Initial release. Ships AMOLED wallpapers, Plymouth boot splash,

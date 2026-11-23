@@ -1,0 +1,14 @@
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='Adwaita'
+icon-theme='Adwaita'
+cursor-theme='Adwaita'
+cursor-size=24
+font-name='Space Grotesk 11'
+document-font-name='Space Grotesk 11'
+monospace-font-name='JetBrains Mono 11'
+text-scaling-factor=1.0
+
+[org/gnome/desktop/wm/preferences]
+button-layout=':minimize,maximize,close'
+theme='Adwaita'
