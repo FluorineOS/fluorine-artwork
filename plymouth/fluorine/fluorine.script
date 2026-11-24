@@ -1,0 +1,119 @@
+//
+// fluorine.script -- Plymouth boot theme for FluorineOS
+// Plugin: script (Plymouth 24.004.60)
+// Design: AMOLED Void -- #000000 canvas, #1C2229 track, #B4F03A accent.
+// Plain ASCII only. No emojis.
+//
+// The script plugin exposes Image(), Image.Text(), Image.Crop/Scale/Tile/Rotate,
+// the Sprite and Window namespaces, and the Plymouth callback setters. It has no
+// solid-color image constructor, so every solid surface is a committed PNG that
+// is scaled or cropped at runtime. That keeps the theme fast: no per-frame image
+// allocation beyond the cropped progress fill.
+//
+
+// ---- Canvas -----------------------------------------------------------------
+Window.SetBackgroundTopColor    (0, 0, 0);
+Window.SetBackgroundBottomColor (0, 0, 0);
+
+screen_width  = Window.GetWidth  ();
+screen_height = Window.GetHeight ();
+
+// ---- Hexagonal emblem -------------------------------------------------------
+emblem_size = screen_height / 4;
+if (emblem_size < 96)  { emblem_size = 96; }
+if (emblem_size > 224) { emblem_size = 224; }
+
+emblem_offset = emblem_size / 2;
+
+emblem_image  = Image ("emblem.png").Scale (emblem_size, emblem_size);
+emblem_sprite = Sprite ();
+emblem_sprite.SetImage (emblem_image);
+emblem_sprite.SetX (screen_width / 2 - emblem_offset);
+emblem_sprite.SetY (screen_height / 2 - emblem_offset - 48);
+emblem_sprite.SetZ (10);
+
+// ---- Progress bar -----------------------------------------------------------
+bar_width  = 320;
+bar_height = 2;
+bar_x      = screen_width / 2 - bar_width / 2;
+bar_y      = screen_height / 2 + emblem_offset + 16;
+
+track_sprite = Sprite ();
+track_sprite.SetImage (Image ("bar-track.png"));
+track_sprite.SetX (bar_x);
+track_sprite.SetY (bar_y);
+track_sprite.SetZ (5);
+
+fill_image  = Image ("bar-fill.png");
+fill_sprite = Sprite ();
+fill_sprite.SetImage (fill_image.Crop (0, 0, 1, bar_height));
+fill_sprite.SetX (bar_x);
+fill_sprite.SetY (bar_y);
+fill_sprite.SetZ (6);
+
+bar_length = 0;
+
+fun boot_progress_callback (duration, progress) {
+    length = Math.Clamp (progress, 0, 1) * bar_width;
+    if (length < 1) { length = 1; }
+    if (length != bar_length) {
+        bar_length = length;
+        fill_sprite.SetImage (fill_image.Crop (0, 0, length, bar_height));
+        fill_sprite.SetX (bar_x);
+        fill_sprite.SetY (bar_y);
+    }
+}
+
+Plymouth.SetBootProgressFunction (boot_progress_callback);
+
+// ---- Passphrase dialog ------------------------------------------------------
+// A muted label and a lime underline that grows with the typed passphrase.
+// Nothing is echoed back and no boot log text is drawn.
+
+password_label_sprite = Sprite ();
+password_label_sprite.SetImage (Image.Text ("Passphrase", 0.43, 0.46, 0.51, 1.0, "JetBrains Mono 13", "left"));
+password_label_sprite.SetX (bar_x);
+password_label_sprite.SetY (bar_y + 18);
+password_label_sprite.SetZ (7);
+password_label_sprite.SetOpacity (0);
+
+password_input_sprite = Sprite ();
+password_input_sprite.SetImage (fill_image.Crop (0, 0, 1, bar_height));
+password_input_sprite.SetX (bar_x);
+password_input_sprite.SetY (bar_y + 46);
+password_input_sprite.SetZ (7);
+password_input_sprite.SetOpacity (0);
+
+fun display_password_callback (prompt, bullets) {
+    password_label_sprite.SetOpacity (1);
+
+    typed = Math.Clamp (bullets, 0, 20) * 16;
+    if (typed < 1) {
+        password_input_sprite.SetOpacity (0);
+        return;
+    }
+
+    password_input_sprite.SetImage (fill_image.Crop (0, 0, typed, bar_height));
+    password_input_sprite.SetX (bar_x);
+    password_input_sprite.SetY (bar_y + 46);
+    password_input_sprite.SetOpacity (1);
+}
+
+Plymouth.SetDisplayPasswordFunction (display_password_callback);
+
+fun display_normal_callback () {
+    password_label_sprite.SetOpacity (0);
+    password_input_sprite.SetOpacity (0);
+}
+
+Plymouth.SetDisplayNormalFunction (display_normal_callback);
+
+fun quit_callback () {
+    emblem_sprite.SetOpacity (0);
+    track_sprite.SetOpacity (0);
+    fill_sprite.SetOpacity (0);
+    password_label_sprite.SetOpacity (0);
+    password_input_sprite.SetOpacity (0);
+}
+
+Plymouth.SetQuitFunction (quit_callback);

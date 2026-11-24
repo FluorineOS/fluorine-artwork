@@ -17,6 +17,7 @@ Description: FluorineOS artwork, wallpapers, and unified toolkit defaults
  .
  - AMOLED 3840x2160 SVG wallpapers for the OLED Void design language
  - Plymouth boot splash theme using the script plugin
+ - GRUB2 boot menu theme with a lime selected-entry frame
  - fastfetch ASCII logo and JSONC configuration
  - Calamares installer branding, QML slideshow, and stylesheet
  - GTK 3 and GTK 4 dark settings with the AMOLED Void accent palette

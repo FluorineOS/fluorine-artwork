@@ -7,4 +7,24 @@ if command -v dconf >/dev/null 2>&1; then
     dconf update || true
 fi
 
+# Register fluorine as the default Plymouth theme. plymouth-set-default-theme -R
+# also rebuilds the initramfs, which is where the theme has to live to show up
+# before root is mounted.
+if command -v plymouth-set-default-theme >/dev/null 2>&1 &&
+    [ -d /usr/share/plymouth/themes/fluorine ]; then
+    plymouth-set-default-theme -R fluorine || true
+fi
+
+# GRUB reads themes from the boot partition, not from /usr, so stage the theme
+# where /etc/default/grub points and refresh the menu. Both steps are skipped on
+# systems without a GRUB installation, such as a chroot or an EFI stub setup.
+if [ -d /boot/grub ] && [ -d /usr/share/grub/themes/fluorine ]; then
+    mkdir -p /boot/grub/themes
+    rm -rf /boot/grub/themes/fluorine
+    cp -a /usr/share/grub/themes/fluorine /boot/grub/themes/fluorine
+    if command -v update-grub >/dev/null 2>&1; then
+        update-grub || true
+    fi
+fi
+
 exit 0

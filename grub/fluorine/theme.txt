@@ -1,0 +1,34 @@
+# FluorineOS GRUB theme -- AMOLED Void
+#
+# Canvas #000000, entry panels #0A0D10 with a 2px #1C2229 hairline frame, and
+# the selected entry framed in Reactive Lime #B4F03A. The boot menu renders with
+# GRUB's built-in unifont bitmap face: no custom pf2 is shipped, because a font
+# name that GRUB cannot resolve makes grub-mkconfig fall back to a bare text
+# menu. A 1.5px frame is not representable in a GRUB pixmap style, so the border
+# is the 2px integer equivalent.
+
+desktop-color: "#000000"
+title-text: ""
+
++ boot_menu {
+    left = 15%
+    top = 30%
+    width = 70%
+    height = 40%
+
+    item_height = 40
+    item_padding = 12
+    item_spacing = 6
+    item_icon_space = 0
+    icon_width = 0
+    icon_height = 0
+
+    item_color = "#E2E8F0"
+    selected_item_color = "#B4F03A"
+
+    item_pixmap_style = "item_*.png"
+    selected_item_pixmap_style = "sel_*.png"
+
+    scrollbar = false
+    scrollbar_width = 0
+}

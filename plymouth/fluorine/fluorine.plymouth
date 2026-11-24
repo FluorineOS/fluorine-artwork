@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=FluorineOS
+Description=FluorineOS boot splash: AMOLED black canvas with a reactive lime progress bar
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/fluorine
+ScriptFile=/usr/share/plymouth/themes/fluorine/fluorine.script

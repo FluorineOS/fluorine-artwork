@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>FluorineOS hexagonal F emblem</title>
+  <!-- Pointy-top hexagon outline plus a geometric F, both in Reactive Lime. -->
+  <polygon points="256,36 446,146 446,366 256,476 66,366 66,146"
+           fill="none" stroke="#B4F03A" stroke-width="16" stroke-linejoin="miter"/>
+  <rect x="206" y="166" width="28" height="180" fill="#B4F03A"/>
+  <rect x="206" y="166" width="100" height="28" fill="#B4F03A"/>
+  <rect x="206" y="242" width="72" height="28" fill="#B4F03A"/>
+</svg>

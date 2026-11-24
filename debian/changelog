@@ -1,3 +1,21 @@
+fluorine-artwork (0.4.0) trixie; urgency=medium
+
+  * Replace the Plymouth theme with a rewritten fluorine theme. The previous
+    script called Image.NewSolidColor and Image.NewGradient, neither of which
+    exists in Plymouth 24.004.60, so the theme aborted at load and every boot
+    fell back to the text splash.
+  * Ship the hexagonal F emblem and the 2px progress bar as committed PNGs and
+    crop the fill at runtime, which is the only solid-surface primitive the
+    script plugin actually provides.
+  * Draw the passphrase dialog as a muted label over a lime underline that grows
+    with the typed passphrase, with no password echo and no boot log text.
+  * Add a GRUB2 theme: black canvas, carbon entry panels inside a 2px hairline
+    frame, and a lime frame on the selected entry.
+  * Register fluorine as the default Plymouth theme and stage the GRUB theme
+    under /boot/grub/themes from postinst.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 01:10:00 +0530
+
 fluorine-artwork (0.3.3) trixie; urgency=medium
 
   * Fix the void wallpaper: the octahedron geometry comment used a double hyphen,

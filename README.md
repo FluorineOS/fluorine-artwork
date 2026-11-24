@@ -7,8 +7,8 @@ Debian 13 Trixie | Hyprland 0.55+ | x86_64
 > [FluorineOS/fluorine Releases](https://github.com/FluorineOS/fluorine/releases/latest).
 
 This package installs the visual assets and toolkit defaults for FluorineOS: AMOLED SVG
-wallpapers, Plymouth boot splash, fastfetch configuration, Calamares installer branding,
-and dark GTK, Qt, and gsettings defaults.
+wallpapers, the Plymouth boot splash, the GRUB2 boot menu theme, fastfetch configuration,
+Calamares installer branding, and dark GTK, Qt, and gsettings defaults.
 
 ## Package Contents
 
@@ -28,8 +28,11 @@ and dark GTK, Qt, and gsettings defaults.
 | `/etc/fonts/conf.d/50-fluorineos-alias.conf` | Resolves Space Grotesk to the packaged Inter family |
 | `/etc/dconf/profile/user` | dconf profile reading the local system database |
 | `/etc/dconf/db/local.d/00-fluorine-appearance` | Dark scheme, icon theme, cursor, and font keys |
-| `/usr/share/plymouth/themes/fluorineos/fluorineos.plymouth` | Plymouth theme descriptor |
-| `/usr/share/plymouth/themes/fluorineos/fluorineos.script` | Plymouth script-plugin boot splash |
+| `/usr/share/plymouth/themes/fluorine/fluorine.plymouth` | Plymouth theme descriptor, registered as the default in `postinst` |
+| `/usr/share/plymouth/themes/fluorine/fluorine.script` | Plymouth script-plugin boot splash |
+| `/usr/share/plymouth/themes/fluorine/emblem.png` | Hexagonal F boot emblem, lime on transparent |
+| `/usr/share/grub/themes/fluorine/theme.txt` | GRUB2 boot menu theme, staged under `/boot/grub/themes` |
+| `/usr/share/grub/themes/fluorine/item_*.png`, `sel_*.png` | 9-slice entry panels and lime selected frame |
 | `/usr/share/calamares/branding/fluorineos/branding.desc` | Calamares branding descriptor |
 | `/usr/share/calamares/branding/fluorineos/logo.svg` | Calamares product logo |
 | `/usr/share/calamares/branding/fluorineos/icon.svg` | Calamares product icon |
@@ -76,7 +79,7 @@ Requires `dpkg-dev` and `debhelper` on Debian 13 `amd64`.
 git clone https://github.com/FluorineOS/fluorine-artwork.git
 cd fluorine-artwork
 dpkg-buildpackage -us -uc -b
-dpkg-deb -c ../fluorine-artwork_0.3.1_all.deb
+dpkg-deb -c ../fluorine-artwork_0.4.0_all.deb
 ```
 
 The built `.deb` is placed in the parent directory.
