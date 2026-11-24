@@ -1,3 +1,11 @@
+fluorine-artwork (0.3.3) trixie; urgency=medium
+
+  * Fix the void wallpaper: the octahedron geometry comment used a double hyphen,
+    which is not legal inside an XML comment, so the file failed to parse and the
+    wallpaper rendered blank in every theme that loads it.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 00:35:00 +0530
+
 fluorine-artwork (0.3.2) trixie; urgency=medium
 
   * Bump the Calamares branding, slideshow, and stylesheet version strings, the

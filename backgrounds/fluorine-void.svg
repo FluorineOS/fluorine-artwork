@@ -19,8 +19,8 @@
        Bottom: (1920, 1380)
        Left:   (1620, 1080)
        Right:  (2220, 1080)
-       Front:  (1920, 1180)   -- shifted down in projection
-       Back:   (1920, 980)    -- shifted up in projection
+       Front:  (1920, 1180)   shifted down in projection
+       Back:   (1920, 980)    shifted up in projection
 
        Redefine with proper isometric-style projection:
        Center: (1920, 1080), radius R=300
