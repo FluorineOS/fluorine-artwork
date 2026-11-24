@@ -24,5 +24,4 @@ Description: FluorineOS artwork, wallpapers, and unified toolkit defaults
  - dconf defaults for the dark color scheme, icon theme, and cursor size
  - fontconfig alias so the design system UI family resolves to Inter
  - Inter and JetBrains Mono font families referenced by every theme
- - Hyprland idle, scaling, and toolkit environment defaults are provided by
-   fluorine-desktop
+ - Hyprland idle, scaling, and toolkit defaults supplied by fluorine-desktop

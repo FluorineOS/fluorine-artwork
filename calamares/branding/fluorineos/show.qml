@@ -2,8 +2,16 @@
 /*
  * show.qml -- Calamares slideshow for FluorineOS 0.2.0
  * Slideshow API version 2.
- * Design: AMOLED Void -- #000000 background, #B4F03A accent, #E2E8F0 text.
- * Plain ASCII only. No emojis.
+ *
+ * Design: AMOLED Void.
+ *   canvas        #000000
+ *   panel         #0A0D10
+ *   hairline      #1C2229
+ *   accent        #B4F03A
+ *   primary text  #E2E8F0
+ *   muted text    #6E7681
+ *
+ * Three slides, plain ASCII, no emojis.
  */
 
 import QtQuick 2.15
@@ -12,7 +20,7 @@ import io.calamares.ui 1.0
 Presentation {
     id: presentation
 
-    // Slide 1: Welcome
+    // Slide 1: workspace and core keybindings.
     Slide {
         anchors.fill: parent
 
@@ -22,64 +30,11 @@ Presentation {
 
             Column {
                 anchors.centerIn: parent
-                spacing: 24
+                spacing: 20
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: "FluorineOS 0.2.0"
-                    font.family: "Inter, sans-serif"
-                    font.pixelSize: 32
-                    font.weight: Font.Bold
-                    color: "#B4F03A"
-                }
-
-                Text {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: "Debian 13 Trixie  |  Hyprland 0.55+  |  x86_64"
-                    font.family: "Inter, sans-serif"
-                    font.pixelSize: 14
-                    color: "#6E7681"
-                    letterSpacing: 1
-                }
-
-                Rectangle {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width: 320
-                    height: 1
-                    color: "#1C2229"
-                }
-
-                Text {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width: 480
-                    wrapMode: Text.WordWrap
-                    horizontalAlignment: Text.AlignHCenter
-                    text: "FluorineOS is a Debian 13 workstation built on Hyprland 0.55 " +
-                          "with an AMOLED Void visual design. Installation is in progress."
-                    font.family: "Inter, sans-serif"
-                    font.pixelSize: 13
-                    color: "#E2E8F0"
-                    lineHeight: 1.5
-                }
-            }
-        }
-    }
-
-    // Slide 2: Desktop environment
-    Slide {
-        anchors.fill: parent
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#000000"
-
-            Column {
-                anchors.centerIn: parent
-                spacing: 24
-
-                Text {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: "Hyprland 0.55+"
+                    text: "Workspace"
                     font.family: "Inter, sans-serif"
                     font.pixelSize: 28
                     font.weight: Font.Bold
@@ -88,40 +43,50 @@ Presentation {
 
                 Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: 320
-                    height: 1
+                    width: 360
+                    height: 2
                     color: "#1C2229"
                 }
 
-                Grid {
+                Rectangle {
+                    width: 520
+                    height: 168
+                    color: "#0A0D10"
+                    border.width: 2
+                    border.color: "#1C2229"
+
+                    Grid {
+                        anchors.centerIn: parent
+                        columns: 2
+                        columnSpacing: 40
+                        rowSpacing: 16
+
+                        Text { text: "SUPER + Return"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Open the terminal"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+
+                        Text { text: "SUPER + D"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Open the application launcher"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+
+                        Text { text: "SUPER + Escape"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Open the system menu"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+                    }
+                }
+
+                Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    columns: 2
-                    columnSpacing: 32
-                    rowSpacing: 12
-
-                    Text { text: "Compositor"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "Hyprland 0.55+ (trixie-backports)"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
-
-                    Text { text: "Bar"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "Waybar"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
-
-                    Text { text: "Terminal"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "kitty"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
-
-                    Text { text: "Launcher"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "Fuzzel"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
-
-                    Text { text: "Notifications"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "SwayNotificationCenter"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
-
-                    Text { text: "Display Manager"; font.pixelSize: 13; color: "#6E7681"; font.family: "Inter, sans-serif" }
-                    Text { text: "greetd + tuigreet"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "Inter, sans-serif" }
+                    width: 520
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "Workspaces occupy SUPER + 1 through 9, and SUPER + Shift moves the focused window between them."
+                    font.family: "Inter, sans-serif"
+                    font.pixelSize: 13
+                    color: "#6E7681"
                 }
             }
         }
     }
 
-    // Slide 3: Design and packages
+    // Slide 2: configuration files.
     Slide {
         anchors.fill: parent
 
@@ -131,11 +96,11 @@ Presentation {
 
             Column {
                 anchors.centerIn: parent
-                spacing: 24
+                spacing: 20
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: "AMOLED Void Design"
+                    text: "Configuration"
                     font.family: "Inter, sans-serif"
                     font.pixelSize: 28
                     font.weight: Font.Bold
@@ -144,47 +109,114 @@ Presentation {
 
                 Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: 320
-                    height: 1
+                    width: 360
+                    height: 2
                     color: "#1C2229"
                 }
 
-                Grid {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    columns: 2
-                    columnSpacing: 32
-                    rowSpacing: 12
+                Rectangle {
+                    width: 520
+                    height: 132
+                    color: "#0A0D10"
+                    border.width: 2
+                    border.color: "#1C2229"
 
-                    Text { text: "Background"; font.pixelSize: 13; color: "#6E7681"; font.family: "monospace" }
-                    Text { text: "#000000"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "monospace" }
+                    Grid {
+                        anchors.centerIn: parent
+                        columns: 2
+                        columnSpacing: 40
+                        rowSpacing: 16
 
-                    Text { text: "Surface"; font.pixelSize: 13; color: "#6E7681"; font.family: "monospace" }
-                    Text { text: "#0A0D10"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "monospace" }
+                        Text { text: "~/.config/hypr/"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Compositor, idle policy, lock screen"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
 
-                    Text { text: "Accent"; font.pixelSize: 13; color: "#6E7681"; font.family: "monospace" }
-                    Text { text: "#B4F03A"; font.pixelSize: 13; color: "#B4F03A"; font.family: "monospace" }
-
-                    Text { text: "Text"; font.pixelSize: 13; color: "#6E7681"; font.family: "monospace" }
-                    Text { text: "#E2E8F0"; font.pixelSize: 13; color: "#E2E8F0"; font.family: "monospace" }
+                        Text { text: "~/.config/waybar/"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Bar layout and styling"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+                    }
                 }
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: 480
+                    width: 520
                     wrapMode: Text.WordWrap
                     horizontalAlignment: Text.AlignHCenter
-                    text: "Installation is almost complete. The system will be ready shortly."
+                    text: "Every surface is a plain text file. The compositor reads hyprland.lua, and edits apply after hyprctl reload or the next login."
                     font.family: "Inter, sans-serif"
                     font.pixelSize: 13
                     color: "#6E7681"
-                    lineHeight: 1.5
+                }
+            }
+        }
+    }
+
+    // Slide 3: maintenance.
+    Slide {
+        anchors.fill: parent
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#000000"
+
+            Column {
+                anchors.centerIn: parent
+                spacing: 20
+
+                Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: "Maintenance"
+                    font.family: "Inter, sans-serif"
+                    font.pixelSize: 28
+                    font.weight: Font.Bold
+                    color: "#B4F03A"
+                }
+
+                Rectangle {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: 360
+                    height: 2
+                    color: "#1C2229"
+                }
+
+                Rectangle {
+                    width: 520
+                    height: 168
+                    color: "#0A0D10"
+                    border.width: 2
+                    border.color: "#1C2229"
+
+                    Grid {
+                        anchors.centerIn: parent
+                        columns: 2
+                        columnSpacing: 40
+                        rowSpacing: 16
+
+                        Text { text: "flr-update"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Refresh the index and upgrade"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+
+                        Text { text: "flr-doctor"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Report session and repository health"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+
+                        Text { text: "apt upgrade"; font.family: "JetBrains Mono, monospace"; font.pixelSize: 14; color: "#B4F03A" }
+                        Text { text: "Standard Debian upgrade path"; font.family: "Inter, sans-serif"; font.pixelSize: 14; color: "#E2E8F0" }
+                    }
+                }
+
+                Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: 520
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "Installation is nearly complete. The system reboots into the greetd login prompt when the copy finishes."
+                    font.family: "Inter, sans-serif"
+                    font.pixelSize: 13
+                    color: "#6E7681"
                 }
             }
         }
     }
 
     Timer {
-        interval: 5000
+        interval: 6000
         running: true
         repeat: true
         onTriggered: presentation.goToNextSlide()

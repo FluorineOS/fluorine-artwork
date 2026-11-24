@@ -1,0 +1,5 @@
+# FluorineOS ships its appearance defaults in /etc/skel so that every newly
+# created user receives the fastfetch, GTK, Qt, and font configuration on first
+# login. These are package content by design, not files copied from an
+# administrator account, which is what this tag reports.
+fluorine-artwork: package-contains-file-in-etc-skel
