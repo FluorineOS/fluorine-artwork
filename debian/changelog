@@ -1,3 +1,11 @@
+fluorine-artwork (0.3.1) trixie; urgency=medium
+
+  * Bump the Calamares branding, slideshow, and stylesheet version strings, the
+    release notes link, and the Plymouth theme comment to 0.3.0 for the
+    FluorineOS 0.3.0 release image.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Tue, 24 Nov 2026 22:45:00 +0530
+
 fluorine-artwork (0.3.0) trixie; urgency=medium
 
   * Replace the Calamares slideshow with three factual slides covering the core

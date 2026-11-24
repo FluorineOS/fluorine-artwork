@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 /*
- * show.qml -- Calamares slideshow for FluorineOS 0.2.0
+ * show.qml -- Calamares slideshow for FluorineOS 0.3.0
  * Slideshow API version 2.
  *
  * Design: AMOLED Void.
