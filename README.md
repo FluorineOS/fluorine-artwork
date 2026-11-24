@@ -7,8 +7,9 @@ Debian 13 Trixie | Hyprland 0.55+ | x86_64
 > [FluorineOS/fluorine Releases](https://github.com/FluorineOS/fluorine/releases/latest).
 
 This package installs the visual assets and toolkit defaults for FluorineOS: AMOLED SVG
-wallpapers, the Plymouth boot splash, the GRUB2 boot menu theme, fastfetch configuration,
-Calamares installer branding, and dark GTK, Qt, and gsettings defaults.
+wallpapers, four rendered 4K PNG wallpapers, the Plymouth boot splash, the GRUB2 boot menu
+theme, fastfetch configuration, Calamares installer branding, and dark GTK, Qt, and
+gsettings defaults.
 
 ## Package Contents
 
@@ -16,6 +17,10 @@ Calamares installer branding, and dark GTK, Qt, and gsettings defaults.
 | --- | --- |
 | `/usr/share/backgrounds/fluorineos/fluorine-void.svg` | 3840x2160 AMOLED wallpaper, octahedron wireframe |
 | `/usr/share/backgrounds/fluorineos/fluorine-grid.svg` | 3840x2160 AMOLED wallpaper, technical reticle grid |
+| `/usr/share/backgrounds/fluorine/fluorine-grid.png` | 3840x2160 lossless wallpaper, architectural hairline grid (default) |
+| `/usr/share/backgrounds/fluorine/fluorine-hex.png` | 3840x2160 lossless wallpaper, hexagonal F emblem |
+| `/usr/share/backgrounds/fluorine/fluorine-topo.png` | 3840x2160 lossless wallpaper, topographic contours with one lime ridge |
+| `/usr/share/backgrounds/fluorine/fluorine-void.png` | 3840x2160 lossless wallpaper, solid void canvas |
 | `/etc/skel/.config/fastfetch/logo.txt` | Block ASCII emblem for fastfetch |
 | `/etc/skel/.config/fastfetch/config.jsonc` | fastfetch configuration with FluorineOS branding |
 | `/etc/skel/.config/gtk-3.0/settings.ini` | GTK 3 dark settings, Adwaita theme, 24px cursor |
@@ -73,16 +78,21 @@ The package is distributed through the FluorineOS APT repository at
 
 ## Build
 
-Requires `dpkg-dev` and `debhelper` on Debian 13 `amd64`.
+Requires `dpkg-dev`, `debhelper`, and `librsvg2-bin` on Debian 13 `amd64`.
 
 ```sh
 git clone https://github.com/FluorineOS/fluorine-artwork.git
 cd fluorine-artwork
 dpkg-buildpackage -us -uc -b
-dpkg-deb -c ../fluorine-artwork_0.4.0_all.deb
+dpkg-deb -c ../fluorine-artwork_0.5.0_all.deb
 ```
 
 The built `.deb` is placed in the parent directory.
+
+The four 4K wallpapers are not stored in git. `wallpapers/*.svg` holds the vector sources
+and `tools/generate-wallpapers.sh` renders them to `wallpapers/out/` at build time through
+`rsvg-convert`, which `debian/rules` calls before packaging. Rendering the same sources
+twice produces byte-identical PNGs, so a rebuild of the same commit ships the same images.
 
 ## License
 

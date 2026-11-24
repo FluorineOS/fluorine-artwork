@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="3840" height="2160"
+     viewBox="0 0 3840 2160">
+
+  <title>FluorineOS void wallpaper</title>
+
+  <!-- Pure void canvas. Nothing is drawn on purpose: an all-black surface is
+       the cheapest thing an OLED panel can display. -->
+  <rect width="3840" height="2160" fill="#000000"/>
+</svg>

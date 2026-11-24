@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="3840" height="2160"
+     viewBox="0 0 3840 2160">
+
+  <title>FluorineOS grid wallpaper</title>
+
+  <!-- Architectural hairline grid on the void canvas.
+       Minor lines every 120px, major lines every 480px, both in the inactive
+       border token so the grid reads as structure rather than decoration. -->
+  <defs>
+    <pattern id="fluorine-minor" width="120" height="120" patternUnits="userSpaceOnUse">
+      <path d="M 120 0 L 0 0 L 0 120" fill="none" stroke="#1C2229" stroke-width="1"/>
+    </pattern>
+    <pattern id="fluorine-major" width="480" height="480" patternUnits="userSpaceOnUse">
+      <path d="M 480 0 L 0 0 L 0 480" fill="none" stroke="#1C2229" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="3840" height="2160" fill="#000000"/>
+  <rect width="3840" height="2160" fill="url(#fluorine-minor)"/>
+  <rect width="3840" height="2160" fill="url(#fluorine-major)"/>
+
+  <!-- Coordinate ticks along the top and left edges at every major line. -->
+  <g stroke="#1C2229" stroke-width="2">
+    <path d="M 480 0 L 480 18 M 960 0 L 960 18 M 1440 0 L 1440 18 M 1920 0 L 1920 18 M 2400 0 L 2400 18 M 2880 0 L 2880 18 M 3360 0 L 3360 18"/>
+    <path d="M 0 480 L 18 480 M 0 960 L 18 960 M 0 1440 L 18 1440 M 0 1920 L 18 1920"/>
+  </g>
+
+  <!-- Registration crosshair at the exact centre of the canvas. -->
+  <g stroke="#1C2229" stroke-width="2">
+    <path d="M 1860 1080 L 1980 1080"/>
+    <path d="M 1920 1020 L 1920 1140"/>
+  </g>
+</svg>

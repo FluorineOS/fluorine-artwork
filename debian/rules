@@ -1,3 +1,12 @@
 #!/usr/bin/make -f
+
 %:
 	dh $@
+
+# The repository carries the wallpaper vectors only. Rendering them here keeps
+# four 4K PNGs out of git while every package still ships lossless 3840x2160
+# images produced from the same sources. rsvg-convert output is byte-identical
+# across runs for these inputs.
+override_dh_auto_build:
+	dh_auto_build
+	./tools/generate-wallpapers.sh

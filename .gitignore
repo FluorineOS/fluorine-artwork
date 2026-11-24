@@ -8,5 +8,8 @@ debian/files
 debian/*.substvars
 debian/tmp/
 
+# Wallpapers are rendered from wallpapers/*.svg at package build time
+wallpapers/out/
+
 # Local and editor noise
 .DS_Store

@@ -1,3 +1,14 @@
+fluorine-artwork (0.5.0) trixie; urgency=medium
+
+  * Add four 3840x2160 lossless PNG wallpapers under
+    /usr/share/backgrounds/fluorine: grid, hex, topo, and void.
+  * Render the wallpapers from committed SVG sources during the package build
+    through tools/generate-wallpapers.sh, so the repository stays vector-only
+    and every build produces byte-identical images.
+  * Depend on librsvg2-bin at build time for rsvg-convert.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 03:10:00 +0530
+
 fluorine-artwork (0.4.0) trixie; urgency=medium
 
   * Replace the Plymouth theme with a rewritten fluorine theme. The previous

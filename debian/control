@@ -2,7 +2,7 @@ Source: fluorine-artwork
 Section: misc
 Priority: optional
 Maintainer: gowthvm <gowthamgkofficial@gmail.com>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), librsvg2-bin
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
 
@@ -16,6 +16,7 @@ Description: FluorineOS artwork, wallpapers, and unified toolkit defaults
  including:
  .
  - AMOLED 3840x2160 SVG wallpapers for the OLED Void design language
+ - Four rendered 3840x2160 lossless PNG wallpapers: grid, hex, topo, void
  - Plymouth boot splash theme using the script plugin
  - GRUB2 boot menu theme with a lime selected-entry frame
  - fastfetch ASCII logo and JSONC configuration
