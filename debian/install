@@ -12,6 +12,8 @@ skel/.config/gtk-4.0/settings.ini etc/skel/.config/gtk-4.0/
 skel/.config/gtk-4.0/gtk.css etc/skel/.config/gtk-4.0/
 skel/.config/qt5ct/qt5ct.conf etc/skel/.config/qt5ct/
 skel/.config/qt6ct/qt6ct.conf etc/skel/.config/qt6ct/
+skel/.config/zathura/zathurarc etc/skel/.config/zathura/
+skel/.config/swayimg/config etc/skel/.config/swayimg/
 qt/colors/fluorine.conf usr/share/fluorineos/qt/colors/
 dconf/profile/user etc/dconf/profile/
 fonts/50-fluorineos-alias.conf etc/fonts/conf.d/

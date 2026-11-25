@@ -1,0 +1,19 @@
+# FluorineOS swayimg defaults.
+#
+# The viewer window is painted pure black so images float on the desktop with
+# no chrome, and bicubic resampling keeps photos sharp at both fit and zoom.
+# Use antialiasing = nearest when pixel art must stay exact.
+
+[general]
+mode = viewer
+
+[viewer]
+window = #000000
+scale = fit
+antialiasing = bicubic
+keep_zoom = no
+
+[gallery]
+window = #000000
+background = #0A0D10
+antialiasing = bicubic

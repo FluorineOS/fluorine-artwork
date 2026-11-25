@@ -1,3 +1,13 @@
+fluorine-artwork (0.6.0) trixie; urgency=medium
+
+  * Add a Zathura configuration that recolors PDF pages onto pure black with
+    the light foreground, and puts the lime accent on search hits, the current
+    selection, and the status bar.
+  * Add a swayimg configuration with a black viewer window, fit-to-window
+    scaling, and bicubic resampling for crisp images at every zoom level.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 09:45:00 +0530
+
 fluorine-artwork (0.5.0) trixie; urgency=medium
 
   * Add four 3840x2160 lossless PNG wallpapers under

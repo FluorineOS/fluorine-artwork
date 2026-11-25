@@ -1,0 +1,26 @@
+# FluorineOS Zathura defaults.
+#
+# PDFs are recolored instead of inverted: light page backgrounds become pure
+# black and dark ink becomes the light foreground, so long reading sessions
+# match the rest of the AMOLED Void desktop and stay easy on OLED panels.
+
+set default-bg "#000000"
+set default-fg "#E2E8F0"
+
+set recolor true
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#E2E8F0"
+set recolor-keephue false
+
+# Search hits and the current selection use the lime accent.
+set highlight-color "#B4F03A"
+set highlight-active-color "#B4F03A"
+
+set statusbar-bg "#0A0D10"
+set statusbar-fg "#E2E8F0"
+set statusbar-h-padding 8
+set statusbar-v-padding 6
+
+set font "JetBrains Mono 10"
+set selection-clipboard clipboard
+set window-title-basename true

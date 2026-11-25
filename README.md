@@ -29,6 +29,8 @@ gsettings defaults.
 | `/etc/skel/.config/gtk-4.0/gtk.css` | AMOLED Void surfaces and lime accent for GTK 4 |
 | `/etc/skel/.config/qt6ct/qt6ct.conf` | Qt 6 Fusion style bound to the FluorineOS palette |
 | `/etc/skel/.config/qt5ct/qt5ct.conf` | Qt 5 Fusion style bound to the same palette |
+| `/etc/skel/.config/zathura/zathurarc` | Recolored dark PDF viewing with lime highlights |
+| `/etc/skel/.config/swayimg/config` | Black image viewer window with bicubic scaling |
 | `/usr/share/fluorineos/qt/colors/fluorine.conf` | Shared qt5ct and qt6ct palette |
 | `/etc/fonts/conf.d/50-fluorineos-alias.conf` | Resolves Space Grotesk to the packaged Inter family |
 | `/etc/dconf/profile/user` | dconf profile reading the local system database |
@@ -61,6 +63,12 @@ surfaces. Qt 5 applications honor the same palette when launched with `qt5ct`.
 GNOME-based surfaces read the dconf system database, which sets `color-scheme` to
 `prefer-dark` and matches the same theme, icon, cursor, and font choices. `debian/postinst`
 runs `dconf update` when `dconf-cli` is installed, so the defaults apply system wide.
+
+Zathura reads `~/.config/zathura/zathurarc`, which enables recoloring instead of inverting:
+page backgrounds become `#000000`, ink becomes `#e2e8f0`, and search hits plus the current
+selection use lime `#b4f03a` against a `#0a0d10` status bar. swayimg reads
+`~/.config/swayimg/config` for a black viewer window, fit-to-window scaling, and bicubic
+resampling; switch `antialiasing` to `nearest` there when pixel art must stay exact.
 
 Hyprland announces every output with `preferred` mode, automatic placement, and scale 1.
 Fractional scale values of 1.25 and 1.5 are documented as commented examples in
