@@ -2,6 +2,9 @@ wallpapers/out/fluorine-grid.png usr/share/backgrounds/fluorine/
 wallpapers/out/fluorine-hex.png usr/share/backgrounds/fluorine/
 wallpapers/out/fluorine-topo.png usr/share/backgrounds/fluorine/
 wallpapers/out/fluorine-void.png usr/share/backgrounds/fluorine/
+wallpapers/custom/wall1.png usr/share/backgrounds/fluorine/
+wallpapers/custom/wall2.png usr/share/backgrounds/fluorine/
+wallpapers/custom/wall3.png usr/share/backgrounds/fluorine/
 backgrounds/fluorine-void.svg usr/share/backgrounds/fluorineos/
 backgrounds/fluorine-grid.svg usr/share/backgrounds/fluorineos/
 skel/.config/fastfetch/logo.txt etc/skel/.config/fastfetch/

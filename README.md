@@ -17,10 +17,13 @@ gsettings defaults.
 | --- | --- |
 | `/usr/share/backgrounds/fluorineos/fluorine-void.svg` | 3840x2160 AMOLED wallpaper, octahedron wireframe |
 | `/usr/share/backgrounds/fluorineos/fluorine-grid.svg` | 3840x2160 AMOLED wallpaper, technical reticle grid |
-| `/usr/share/backgrounds/fluorine/fluorine-grid.png` | 3840x2160 lossless wallpaper, architectural hairline grid (default) |
+| `/usr/share/backgrounds/fluorine/fluorine-grid.png` | 3840x2160 lossless wallpaper, architectural hairline grid |
 | `/usr/share/backgrounds/fluorine/fluorine-hex.png` | 3840x2160 lossless wallpaper, hexagonal F emblem |
 | `/usr/share/backgrounds/fluorine/fluorine-topo.png` | 3840x2160 lossless wallpaper, topographic contours with one lime ridge |
 | `/usr/share/backgrounds/fluorine/fluorine-void.png` | 3840x2160 lossless wallpaper, solid void canvas |
+| `/usr/share/backgrounds/fluorine/wall1.png` | 3840x2160 custom wallpaper, FluorineOS wordmark on black (default) |
+| `/usr/share/backgrounds/fluorine/wall2.png` | 3840x2160 custom wallpaper, upscaled from the 1920x1080 original |
+| `/usr/share/backgrounds/fluorine/wall3.png` | 3840x2160 custom wallpaper, upscaled from the 1920x1080 original |
 | `/etc/skel/.config/fastfetch/logo.txt` | Block ASCII emblem for fastfetch |
 | `/etc/skel/.config/fastfetch/config.jsonc` | fastfetch configuration with FluorineOS branding |
 | `/etc/skel/.config/gtk-3.0/settings.ini` | GTK 3 dark settings, Adwaita theme, 24px cursor |

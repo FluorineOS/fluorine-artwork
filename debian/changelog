@@ -1,3 +1,15 @@
+fluorine-artwork (0.7.0) trixie; urgency=medium
+
+  * Ship three custom wallpapers as wall1.png, wall2.png, and wall3.png under
+    /usr/share/backgrounds/fluorine, so they appear in the flr-wall picker next
+    to the rendered set.
+  * Render each from its 1920x1080 original at 3840x2160: LANCZOS resampling
+    plus a 1.0/60/2 unsharp mask on the colour channels only, so the pixel
+    wordmark stays crisp without ringing and the alpha channel stays smooth.
+    Every output is a lossless PNG at exactly 3840x2160.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 12:05:00 +0530
+
 fluorine-artwork (0.6.0) trixie; urgency=medium
 
   * Add a Zathura configuration that recolors PDF pages onto pure black with
