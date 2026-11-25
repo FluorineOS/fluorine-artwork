@@ -7,6 +7,7 @@ wallpapers/custom/wall2.png usr/share/backgrounds/fluorine/
 wallpapers/custom/wall3.png usr/share/backgrounds/fluorine/
 backgrounds/fluorine-void.svg usr/share/backgrounds/fluorineos/
 backgrounds/fluorine-grid.svg usr/share/backgrounds/fluorineos/
+icons/Fluorine usr/share/icons/
 skel/.config/fastfetch/logo.txt etc/skel/.config/fastfetch/
 skel/.config/fastfetch/config.jsonc etc/skel/.config/fastfetch/
 skel/.config/gtk-3.0/settings.ini etc/skel/.config/gtk-3.0/

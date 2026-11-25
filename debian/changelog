@@ -1,3 +1,20 @@
+fluorine-artwork (0.8.0) trixie; urgency=medium
+
+  * Add the Fluorine icon theme under /usr/share/icons/Fluorine, a geometric
+    SVG set drawn on a 24x24 grid with 1.5px and 2px strokes in foreground
+    #e2e8f0 and lime #b4f03a. Every icon also ships a -symbolic variant that
+    uses currentColor so GTK and panel surfaces can recolor it.
+  * Cover the system controls (flr-ctl, flr-mode, flr-snapshot, flr-shader,
+    flr-wall), applications (kitty, thunar, browser, flr-settings,
+    flr-doctor), panel status (power, network, bluetooth, audio, battery),
+    and the action set (display, keys, lock, suspend, reboot, poweroff,
+    monitor, update).
+  * Select Fluorine as the icon theme in the GTK 3 and GTK 4 settings and in
+    the dconf system database, and promote adwaita-icon-theme to a hard
+    dependency so the inherited stock icons are always present.
+
+ -- gowthvm <gowthamgkofficial@gmail.com>  Wed, 25 Nov 2026 16:46:00 +0530
+
 fluorine-artwork (0.7.0) trixie; urgency=medium
 
   * Ship three custom wallpapers as wall1.png, wall2.png, and wall3.png under

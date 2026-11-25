@@ -1,0 +1,27 @@
+[Icon Theme]
+Name=Fluorine
+Comment=Geometric system icons for FluorineOS
+Inherits=Adwaita,hicolor
+Example=flr-ctl
+Directories=scalable/actions,scalable/apps,scalable/status
+
+[scalable/actions]
+Context=Actions
+Size=24
+MinSize=16
+MaxSize=512
+Type=Scalable
+
+[scalable/apps]
+Context=Applications
+Size=24
+MinSize=16
+MaxSize=512
+Type=Scalable
+
+[scalable/status]
+Context=Status
+Size=24
+MinSize=16
+MaxSize=512
+Type=Scalable

@@ -7,9 +7,9 @@ Debian 13 Trixie | Hyprland 0.55+ | x86_64
 > [FluorineOS/fluorine Releases](https://github.com/FluorineOS/fluorine/releases/latest).
 
 This package installs the visual assets and toolkit defaults for FluorineOS: AMOLED SVG
-wallpapers, four rendered 4K PNG wallpapers, the Plymouth boot splash, the GRUB2 boot menu
-theme, fastfetch configuration, Calamares installer branding, and dark GTK, Qt, and
-gsettings defaults.
+wallpapers, four rendered 4K PNG wallpapers, the Plymouth boot splash, the GRUB2 boot
+menu theme, the Fluorine geometric icon theme, fastfetch configuration, Calamares
+installer branding, and dark GTK, Qt, and gsettings defaults.
 
 ## Package Contents
 
@@ -24,11 +24,15 @@ gsettings defaults.
 | `/usr/share/backgrounds/fluorine/wall1.png` | 3840x2160 custom wallpaper, FluorineOS wordmark on black (default) |
 | `/usr/share/backgrounds/fluorine/wall2.png` | 3840x2160 custom wallpaper, upscaled from the 1920x1080 original |
 | `/usr/share/backgrounds/fluorine/wall3.png` | 3840x2160 custom wallpaper, upscaled from the 1920x1080 original |
+| `/usr/share/icons/Fluorine/index.theme` | Icon theme descriptor, inherits Adwaita and hicolor |
+| `/usr/share/icons/Fluorine/scalable/actions/*.svg` | System action icons and `-symbolic` variants |
+| `/usr/share/icons/Fluorine/scalable/apps/*.svg` | Application icons and `-symbolic` variants |
+| `/usr/share/icons/Fluorine/scalable/status/*.svg` | Panel status icons and `-symbolic` variants |
 | `/etc/skel/.config/fastfetch/logo.txt` | Block ASCII emblem for fastfetch |
 | `/etc/skel/.config/fastfetch/config.jsonc` | fastfetch configuration with FluorineOS branding |
-| `/etc/skel/.config/gtk-3.0/settings.ini` | GTK 3 dark settings, Adwaita theme, 24px cursor |
+| `/etc/skel/.config/gtk-3.0/settings.ini` | GTK 3 dark settings, Fluorine icons, 24px cursor |
 | `/etc/skel/.config/gtk-3.0/gtk.css` | AMOLED Void surfaces and lime accent for GTK 3 |
-| `/etc/skel/.config/gtk-4.0/settings.ini` | GTK 4 dark settings, Adwaita theme, 24px cursor |
+| `/etc/skel/.config/gtk-4.0/settings.ini` | GTK 4 dark settings, Fluorine icons, 24px cursor |
 | `/etc/skel/.config/gtk-4.0/gtk.css` | AMOLED Void surfaces and lime accent for GTK 4 |
 | `/etc/skel/.config/qt6ct/qt6ct.conf` | Qt 6 Fusion style bound to the FluorineOS palette |
 | `/etc/skel/.config/qt5ct/qt5ct.conf` | Qt 5 Fusion style bound to the same palette |
@@ -51,12 +55,18 @@ gsettings defaults.
 
 ## Toolkit Defaults
 
-GTK 3 and GTK 4 read the `settings.ini` files above, which select Adwaita, the dark
-variant, a 24px cursor, and Space Grotesk at 11pt. Space Grotesk is not packaged in
-Debian 13, so the fontconfig alias resolves it to Inter; JetBrains Mono is packaged and
-used directly. The paired `gtk.css` files replace the
-Adwaita accent with lime `#b4f03a`, set surfaces to `#000000` and `#0a0d10`, and use deep
-moss `#2a3812` for selection.
+GTK 3 and GTK 4 read the `settings.ini` files above, which select Adwaita controls,
+Fluorine icons, the dark variant, a 24px cursor, and Space Grotesk at 11pt. Space
+Grotesk is not packaged in Debian 13, so the fontconfig alias resolves it to Inter;
+JetBrains Mono is packaged and used directly. The paired `gtk.css` files replace the
+Adwaita accent with lime `#b4f03a`, set surfaces to `#000000` and `#0a0d10`, and use
+deep moss `#2a3812` for selection.
+
+The icon theme draws every glyph on a 24x24 grid with 1.5px and 2px strokes.
+Foreground geometry is `#e2e8f0` and the active detail is lime `#b4f03a`. Each icon
+also ships a `-symbolic` variant that uses `currentColor`, so GTK and panel surfaces
+recolor it to the requested foreground. The theme inherits Adwaita and hicolor, so
+stock icons that the set does not override still resolve.
 
 Qt applications use the Fusion style with the shared palette. `fluorine-desktop` exports
 `QT_QPA_PLATFORMTHEME=qt6ct` and `ELECTRON_OZONE_PLATFORM_HINT=auto` from the Hyprland
@@ -95,7 +105,7 @@ Requires `dpkg-dev`, `debhelper`, and `librsvg2-bin` on Debian 13 `amd64`.
 git clone https://github.com/FluorineOS/fluorine-artwork.git
 cd fluorine-artwork
 dpkg-buildpackage -us -uc -b
-dpkg-deb -c ../fluorine-artwork_0.5.0_all.deb
+dpkg-deb -c ../fluorine-artwork_0.8.0_all.deb
 ```
 
 The built `.deb` is placed in the parent directory.
@@ -104,6 +114,10 @@ The four 4K wallpapers are not stored in git. `wallpapers/*.svg` holds the vecto
 and `tools/generate-wallpapers.sh` renders them to `wallpapers/out/` at build time through
 `rsvg-convert`, which `debian/rules` calls before packaging. Rendering the same sources
 twice produces byte-identical PNGs, so a rebuild of the same commit ships the same images.
+
+The icon theme is committed as SVG. `tools/generate-icons.py` regenerates every color
+and `-symbolic` file from one geometry table, so the set stays consistent and
+reproducible.
 
 ## License
 

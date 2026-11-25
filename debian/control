@@ -2,28 +2,29 @@ Source: fluorine-artwork
 Section: misc
 Priority: optional
 Maintainer: gowthvm <gowthamgkofficial@gmail.com>
-Build-Depends: debhelper-compat (= 13), librsvg2-bin
+Build-Depends: debhelper-compat (= 13), librsvg2-bin, gtk-update-icon-cache
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
 
 Package: fluorine-artwork
 Architecture: all
 Depends: ${misc:Depends}, qt6ct, gsettings-desktop-schemas, dconf-cli,
- fonts-inter, fonts-jetbrains-mono
-Recommends: qt5ct, adwaita-icon-theme
+ adwaita-icon-theme, fonts-inter, fonts-jetbrains-mono
+Recommends: qt5ct
 Description: FluorineOS artwork, wallpapers, and unified toolkit defaults
  This package installs the visual assets and desktop defaults for FluorineOS,
  including:
  .
- - AMOLED 3840x2160 SVG wallpapers for the OLED Void design language
- - Four rendered 3840x2160 lossless PNG wallpapers: grid, hex, topo, void
- - Plymouth boot splash theme using the script plugin
- - GRUB2 boot menu theme with a lime selected-entry frame
- - fastfetch ASCII logo and JSONC configuration
- - Calamares installer branding, QML slideshow, and stylesheet
- - GTK 3 and GTK 4 dark settings with the AMOLED Void accent palette
- - qt5ct and qt6ct palettes so Qt applications match the desktop
- - dconf defaults for the dark color scheme, icon theme, and cursor size
- - fontconfig alias so the design system UI family resolves to Inter
- - Inter and JetBrains Mono font families referenced by every theme
- - Hyprland idle, scaling, and toolkit defaults supplied by fluorine-desktop
+  - AMOLED 3840x2160 SVG wallpapers for the OLED Void design language
+  - Four rendered 3840x2160 lossless PNG wallpapers: grid, hex, topo, void
+  - Fluorine geometric SVG icon theme with symbolic recoloring variants
+  - Plymouth boot splash theme using the script plugin
+  - GRUB2 boot menu theme with a lime selected-entry frame
+  - fastfetch ASCII logo and JSONC configuration
+  - Calamares installer branding, QML slideshow, and stylesheet
+  - GTK 3 and GTK 4 dark settings with the AMOLED Void accent palette
+  - qt5ct and qt6ct palettes so Qt applications match the desktop
+  - dconf defaults for the dark color scheme, icon theme, and cursor size
+  - fontconfig alias so the design system UI family resolves to Inter
+  - Inter and JetBrains Mono font families referenced by every theme
+  - Hyprland idle, scaling, and toolkit defaults supplied by fluorine-desktop

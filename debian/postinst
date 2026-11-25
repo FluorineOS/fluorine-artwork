@@ -27,4 +27,6 @@ if [ -d /boot/grub ] && [ -d /usr/share/grub/themes/fluorine ]; then
     fi
 fi
 
+#DEBHELPER#
+
 exit 0

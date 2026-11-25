@@ -1,7 +1,7 @@
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 gtk-theme='Adwaita'
-icon-theme='Adwaita'
+icon-theme='Fluorine'
 cursor-theme='Adwaita'
 cursor-size=24
 font-name='Space Grotesk 11'
